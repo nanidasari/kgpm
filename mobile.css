@@ -30,6 +30,13 @@
         font-size: large;
     }
 
+    .state{
+      text-align: center;
+      margin-top: -1em;
+      font-size: smaller;
+     
+  }
+
     .scroll-left p {
         font-size: small;
         position: absolute;
@@ -51,8 +58,25 @@
       }
 
 .sec{
-    display: none;
-    transition: 1.5s;
+    
+    opacity: 0;
+    transition: 1s;
+    animation-name: r-l;
+    animation-timing-function: ease-in-out;
+    animation-delay: 2s;
+    width: 0;
+    position: relative;
+}
+
+
+@keyframes r-l {
+  from{
+    width: 0;
+  }
+  to{
+    width: 250px;
+  }
+  
 }
 
       .side {
@@ -64,7 +88,6 @@
         top: 0;
         left:0;
         min-width: 250px;
-       display: block;
         padding: 10px;
         transition: 1s;
         
@@ -109,23 +132,21 @@
 .closebtn{
     color: black;
    border-bottom: none;
-   position: absolute;
+   position: relative;
    border: none;
-   top: -20px;
-   
-   right: 150px;
+  top: -8.2em;
+   right: -220px;
    font-size: 35px;
    background-color: transparent;
    padding: 10px;
    z-index: 2;
 
-   transition: 3s;
    
 }
 
 .closebtn:hover{
-    background-color: black;
-    color: #ddd;
+    
+    color: rgb(0, 0, 0);
 }
 
 
@@ -137,7 +158,6 @@
     color: rgb(12, 11, 11);
     padding: 10px 15px;
     border: none;
-    display: block;
     position: absolute;
     right: 0;
     top: 10.5em;
@@ -149,9 +169,15 @@
   
   .openbtn:hover {
     background-color:#444;
+    transition: 1s;
+  }
+
+  .openbtn:focus {
+    background-color:#444;
     opacity: 0;
     transition: 1s;
   }
+
       .dropdown1 {
         display: flex;
         justify-content: center;
